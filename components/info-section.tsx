@@ -77,7 +77,7 @@ export function InfoSection() {
             return (
               <div
                 key={index}
-                ref={(el) => (itemRefs.current[index] = el)}
+                ref={(el) => {itemRefs.current[index] = el;}}
                 className={`transition-all duration-700 delay-${index * 200} ${
                   visibleItems[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
