@@ -5,11 +5,17 @@ import { motion } from "framer-motion"
 
 export default function GettingStartedPage() {
   const [scrollY, setScrollY] = useState(0)
+  const [windowHeight, setWindowHeight] = useState(800) // fallback value
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    // Set initial window height and handle scroll
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight)
+      
+      const handleScroll = () => setScrollY(window.scrollY)
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   const codeSymbols = ["<>", "{}", "[]", "()", "/>", "&&", "||", "=>"]
@@ -24,12 +30,12 @@ export default function GettingStartedPage() {
             className="absolute text-6xl font-mono text-white/10"
             style={{ left: `${10 + index * 10}%` }}
             animate={{
-              y: [window.innerHeight, -100],
+              y: [windowHeight, -100],
               rotate: [0, 360],
             }}
             transition={{
               duration: 15,
-              repeat: Number.POSITIVE_INFINITY,
+              repeat: Infinity,
               delay: index * 2,
               ease: "linear",
             }}

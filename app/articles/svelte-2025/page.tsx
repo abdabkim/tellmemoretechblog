@@ -5,11 +5,23 @@ import { motion } from "framer-motion"
 
 export default function Svelte2025Page() {
   const [scrollY, setScrollY] = useState(0)
+  const [windowHeight, setWindowHeight] = useState(800) // fallback value
+  const [sparkPositions] = useState(() => 
+    Array.from({ length: 20 }).map((_, index) => ({
+      left: (index * 5.3) % 100, // Deterministic but varied positioning
+      top: (index * 7.7) % 100,
+    }))
+  )
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    // Set initial window height
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight)
+      
+      const handleScroll = () => setScrollY(window.scrollY)
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   return (
@@ -27,7 +39,7 @@ export default function Svelte2025Page() {
             }}
             transition={{
               duration: 4,
-              repeat: Number.POSITIVE_INFINITY,
+              repeat: Infinity,
               delay: index * 1.5,
               times: [0, 0.05, 0.1, 0.85, 1],
             }}
@@ -37,22 +49,22 @@ export default function Svelte2025Page() {
 
       {/* Floating Sparks */}
       <div className="fixed inset-0 pointer-events-none z-5">
-        {Array.from({ length: 20 }).map((_, index) => (
+        {sparkPositions.map((position, index) => (
           <motion.div
             key={index}
             className="absolute w-1 h-1 bg-orange-500 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${position.left}%`,
+              top: `${position.top}%`,
             }}
             animate={{
-              y: [window.innerHeight, -100],
+              y: [windowHeight, -100],
               rotate: [0, 360],
               opacity: [0, 0.6, 0.6, 0],
             }}
             transition={{
               duration: 8,
-              repeat: Number.POSITIVE_INFINITY,
+              repeat: Infinity,
               delay: index * 0.4,
               ease: "linear",
             }}
@@ -126,7 +138,7 @@ export default function Svelte2025Page() {
             <motion.span
               className="text-3xl"
               animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
               ⚡
             </motion.span>
@@ -158,7 +170,7 @@ export default function Svelte2025Page() {
             <motion.span
               className="text-3xl"
               animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
             >
               ⚡
             </motion.span>
@@ -218,7 +230,7 @@ export default function Svelte2025Page() {
             <motion.span
               className="text-3xl"
               animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
             >
               ⚡
             </motion.span>
@@ -277,7 +289,7 @@ export default function Svelte2025Page() {
             <motion.span
               className="text-3xl"
               animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1.5 }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
             >
               ⚡
             </motion.span>
