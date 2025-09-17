@@ -1,12 +1,29 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (path: string): boolean => {
+    if (path === "/") {
+      return pathname === "/"
+    }
+    return pathname.startsWith(path)
+  }
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/frameworks", label: "Frameworks" },
+    { href: "/devtools", label: "DevTools" },
+    { href: "/articles", label: "All Articles" },
+    { href: "/resources", label: "Resources" },
+  ]
 
   return (
     <nav className="bg-background border-b border-border fixed w-full z-50 top-0 backdrop-blur-sm">
@@ -28,31 +45,35 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <Link
-                href="/"
-                className="text-primary font-open-sans font-semibold hover:text-secondary transition-colors"
-              >
-                Home
-              </Link>
-              <Link href="/frameworks" className="text-foreground font-open-sans hover:text-primary transition-colors">
-                Frameworks
-              </Link>
-              <Link href="/devtools" className="text-foreground font-open-sans hover:text-primary transition-colors">
-                DevTools
-              </Link>
-              <Link href="/articles" className="text-foreground font-open-sans hover:text-primary transition-colors">
-                All Articles
-              </Link>
-              <Link href="/resources" className="text-foreground font-open-sans hover:text-primary transition-colors">
-                Resources
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`font-open-sans font-semibold hover:text-secondary transition-colors relative ${
+                    isActive(item.href)
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                  {isActive(item.href) && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"></span>
+                  )}
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/getting-started">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-open-sans font-semibold">
+            <Link href="/devtips">
+              <Button 
+                className={`font-open-sans font-semibold transition-all duration-300 ${
+                  isActive("/devtips")
+                    ? "bg-primary/90 text-primary-foreground ring-2 ring-primary/50"
+                    : "bg-primary hover:bg-primary/90 text-primary-foreground"
+                }`}
+              >
                 Free Dev Tips
               </Button>
             </Link>
@@ -70,44 +91,32 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
-              <Link
-                href="/"
-                className="block px-3 py-2 text-primary font-open-sans font-semibold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/frameworks"
-                className="block px-3 py-2 text-foreground font-open-sans hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Frameworks
-              </Link>
-              <Link
-                href="/devtools"
-                className="block px-3 py-2 text-foreground font-open-sans hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                DevTools
-              </Link>
-              <Link
-                href="/articles"
-                className="block px-3 py-2 text-foreground font-open-sans hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                All Articles
-              </Link>
-              <Link
-                href="/resources"
-                className="block px-3 py-2 text-foreground font-open-sans hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resources
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block px-3 py-2 font-open-sans transition-colors relative ${
+                    isActive(item.href)
+                      ? "text-primary font-semibold bg-primary/10 rounded-md"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                  {isActive(item.href) && (
+                    <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full"></span>
+                  )}
+                </Link>
+              ))}
               <div className="px-3 py-2">
-                <Link href="/getting-started" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-open-sans font-semibold">
+                <Link href="/devtips" onClick={() => setIsMenuOpen(false)}>
+                  <Button 
+                    className={`w-full font-open-sans font-semibold transition-all duration-300 ${
+                      isActive("/devtips")
+                        ? "bg-primary/90 text-primary-foreground ring-2 ring-primary/50"
+                        : "bg-primary hover:bg-primary/90 text-primary-foreground"
+                    }`}
+                  >
                     Free Dev Tips
                   </Button>
                 </Link>

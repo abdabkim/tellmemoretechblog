@@ -73,7 +73,7 @@ export default function Svelte2025Page() {
       </div>
 
       {/* Article Hero */}
-      <section className="min-h-[70vh] flex items-center justify-center px-4 relative z-20 bg-gradient-to-br from-orange-500/10 to-orange-600/5">
+      <section className="min-h-screen flex items-center justify-center px-4 relative z-20 bg-gradient-to-br from-orange-500/10 to-orange-600/5 pt-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider mb-8 shadow-2xl shadow-orange-500/30"

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Code, Wrench, GraduationCap, ArrowRight } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 const infoItems = [
   {
@@ -12,6 +13,7 @@ const infoItems = [
     description:
       "Explore comparisons, performance breakdowns, and use cases for React, Vue, Svelte, and more – curated by real devs.",
     color: "from-primary to-primary/70",
+    link: "/frameworks",
   },
   {
     icon: Wrench,
@@ -19,6 +21,7 @@ const infoItems = [
     description:
       "From code editors to deployment platforms, we review the tools that make your workflow faster and your code cleaner.",
     color: "from-secondary to-secondary/70",
+    link: "/devtools",
   },
   {
     icon: GraduationCap,
@@ -26,6 +29,7 @@ const infoItems = [
     description:
       "Whether you're switching careers or just starting out, our beginner guides help you build real projects and get hired.",
     color: "from-primary to-secondary",
+    link: "/getting-started-tech",
   },
 ]
 
@@ -96,13 +100,15 @@ export function InfoSection() {
 
                     <p className="font-open-sans text-muted-foreground mb-6 leading-relaxed">{item.description}</p>
 
-                    <Button
-                      variant="ghost"
-                      className="text-primary hover:text-ring font-open-sans font-semibold p-0 h-auto group/btn"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href={item.link}>
+                      <Button
+                        variant="ghost"
+                        className="text-primary hover:text-ring font-open-sans font-semibold p-0 h-auto group/btn"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

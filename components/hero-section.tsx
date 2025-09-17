@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Rocket, Wrench } from "lucide-react"
 import { useEffect, useState } from "react"
-
+import Link from "next/link"
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -50,22 +50,26 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-open-sans font-semibold px-8 py-4 text-lg group"
-            >
-              <Rocket className="mr-2 h-5 w-5" />
-              Start Learning
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-open-sans font-semibold px-8 py-4 text-lg bg-transparent"
-            >
-              <Wrench className="mr-2 h-5 w-5" />
-              Browse Tools
-            </Button>
+            <Link href="/getting-started">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-open-sans font-semibold px-8 py-4 text-lg group"
+              >
+                <Rocket className="mr-2 h-5 w-5" />
+                Start Learning
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link href="/resources">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-open-sans font-semibold px-8 py-4 text-lg bg-transparent"
+              >
+                <Wrench className="mr-2 h-5 w-5" />
+                Browse Tools
+              </Button>
+            </Link>
           </div>
 
           {/* Stats */}
