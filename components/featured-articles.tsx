@@ -110,7 +110,7 @@ export function FeaturedArticles() {
           {articles.map((article, index) => (
             <div
               key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
+              ref={(el) => { cardRefs.current[index] = el }}
               className={`transition-all duration-700 delay-${index * 150} ${
                 visibleCards[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
@@ -171,4 +171,4 @@ export function FeaturedArticles() {
       </div>
     </section>
   )
-}
+} 
