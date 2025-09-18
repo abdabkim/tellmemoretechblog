@@ -31,26 +31,26 @@ const articles = [
     href: "/articles/react-vs-vue",
   },
   {
-    icon: "🚀",
-    topic: "Getting Started",
-    readTime: "10 min read",
-    title: "Start Your Coding Journey: From Zero to Hero",
+    icon: "🔍",
+    topic: "Debug Skills",
+    readTime: "6 min read",
+    title: "Debugging Like a Pro: Tools and Mindsets",
     description:
-      "Master the fundamentals, build amazing projects, and launch your career in tech with our comprehensive learning path and roadmap.",
-    tags: ["#Learning", "#Career", "#Beginner"],
+      "Debugging isn't just technical — it's psychological. Learn how top engineers approach bugs with curiosity, precision, and the right tools.",
+    tags: ["#Learning", "#Career", "#Debug"],
     gradient: "from-purple-500 to-pink-500",
-    href: "/getting-started",
+    href: "/debuggingpro",
   },
   {
     icon: "🛠️",
     topic: "Resources",
     readTime: "5 min read",
-    title: "Essential Developer Resources & Tools",
+    title: "VS Code Extensions That Will Save You Hours",
     description:
-      "Curated collection of the best tools, platforms, and resources to supercharge your development journey. All official links, regularly updated.",
+      "From GitLens to TabNine, these extensions streamline your workflow, reduce context switching, and help you write cleaner code — faster.",
     tags: ["#Tools", "#Resources", "#Productivity"],
     gradient: "from-green-500 to-emerald-500",
-    href: "/resources",
+    href: "/vscodeextensions",
   },
 ]
 
