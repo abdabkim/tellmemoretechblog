@@ -143,7 +143,7 @@ export default function ReactExplorePage() {
         ))}
       </div>
 
-      {/* Header */}
+      {/* Header
       <header className="relative z-30 flex items-center justify-between px-6 py-4 bg-black/20 backdrop-blur-lg border-b border-white/10">
         <motion.a
           href="index.html"
@@ -178,7 +178,7 @@ export default function ReactExplorePage() {
         >
           Free Dev Tips
         </motion.a>
-      </header>
+      </header> */}
 
       {/* Hero Section */}
       <section className="relative z-20 flex items-center justify-center min-h-screen px-4">
