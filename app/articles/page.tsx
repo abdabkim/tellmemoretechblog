@@ -78,7 +78,7 @@ export default function AllArticlesPage() {
       date: "Sep 19, 2025",
       readTime: "5 min read",
       tags: ["Tools", "Resources", "Productivity"],
-      link: "/vscodeextension",
+      link: "/vscodeextensions",
     },
      {
       title: "Angular: The Swiss Army Knife Framework That Actually Cuts Through Enterprise Complexity",

@@ -303,38 +303,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16 px-4 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white p-12 rounded-3xl relative overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%201000%201000%22%3E%3Cpolygon%20fill=%22rgba(255,255,255,0.1)%22%20points=%220,1000%201000,800%201000,1000%22/%3E%3C/svg%3E')] bg-cover"></div>
-
-            {/* <div className="relative z-10">
-              <h2 className="text-4xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-xl mb-8 opacity-90">
-                Get notified when we add new resources and tools to our collection.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30"
-                />
-                <button className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 hover:scale-105 transition-all duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div> */}
-          </motion.div>
-        </div>
-      </section>
+      
     </div>
   )
 }

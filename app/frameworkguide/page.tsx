@@ -279,7 +279,7 @@ export default function FrameworkGuidePage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="relative z-20 py-16 px-4 bg-white/5 backdrop-blur-lg">
+      <section className="relative z-20 py-16 px-4 bg-white/10 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-12"
@@ -288,76 +288,136 @@ export default function FrameworkGuidePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Framework Comparison Matrix
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               A comprehensive comparison across the most important criteria for choosing a frontend framework.
             </p>
           </motion.div>
 
+          {/* Mobile-First Responsive Design */}
           <motion.div
-            className="overflow-x-auto"
+            className="w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="min-w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
-              {/* Table Header */}
-              <div className="grid grid-cols-7 gap-4 p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-center">
-                <div>Criteria</div>
-                <div>React</div>
-                <div>Vue.js</div>
-                <div>Angular</div>
-                <div>Svelte</div>
-                <div>Next.js</div>
-                <div>Nuxt.js</div>
-              </div>
-
-              {/* Table Rows */}
+            {/* Mobile View - Stack Layout */}
+            <div className="block lg:hidden space-y-6">
               {comparisonData.map((row, index) => (
                 <motion.div
                   key={index}
-                  className="grid grid-cols-7 gap-4 p-6 border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white/95 backdrop-blur-lg rounded-xl p-6 shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="font-semibold text-slate-800">{row.criteria}</div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.react.score)}`}>
-                      {row.react.value}
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.vue.score)}`}>
-                      {row.vue.value}
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.angular.score)}`}>
-                      {row.angular.value}
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.svelte.score)}`}>
-                      {row.svelte.value}
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.nextjs.score)}`}>
-                      {row.nextjs.value}
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreColor(row.nuxtjs.score)}`}>
-                      {row.nuxtjs.value}
-                    </span>
+                  <h3 className="text-lg font-bold text-slate-800 mb-4 text-center border-b border-slate-200 pb-2">
+                    {row.criteria}
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">React</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.react.score)}`}>
+                        {row.react.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">Vue.js</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.vue.score)}`}>
+                        {row.vue.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">Angular</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.angular.score)}`}>
+                        {row.angular.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">Svelte</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.svelte.score)}`}>
+                        {row.svelte.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">Next.js</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.nextjs.score)}`}>
+                        {row.nextjs.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-sm font-medium text-slate-600 mb-1">Nuxt.js</div>
+                      <span className={`inline-block px-2 py-1 rounded-lg text-xs font-medium ${getScoreColor(row.nuxtjs.score)}`}>
+                        {row.nuxtjs.value}
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Desktop View - Table Layout */}
+            <div className="hidden lg:block">
+              <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden">
+                {/* Table Header */}
+                <div className="grid grid-cols-7 gap-4 p-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-center">
+                  <div className="text-lg">Criteria</div>
+                  <div className="text-lg">React</div>
+                  <div className="text-lg">Vue.js</div>
+                  <div className="text-lg">Angular</div>
+                  <div className="text-lg">Svelte</div>
+                  <div className="text-lg">Next.js</div>
+                  <div className="text-lg">Nuxt.js</div>
+                </div>
+
+                {/* Table Rows */}
+                {comparisonData.map((row, index) => (
+                  <motion.div
+                    key={index}
+                    className="grid grid-cols-7 gap-4 p-6 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="font-semibold text-slate-800 text-lg">{row.criteria}</div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.react.score)}`}>
+                        {row.react.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.vue.score)}`}>
+                        {row.vue.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.angular.score)}`}>
+                        {row.angular.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.svelte.score)}`}>
+                        {row.svelte.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.nextjs.score)}`}>
+                        {row.nextjs.value}
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <span className={`inline-block px-3 py-2 rounded-full text-sm font-medium ${getScoreColor(row.nuxtjs.score)}`}>
+                        {row.nuxtjs.value}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
