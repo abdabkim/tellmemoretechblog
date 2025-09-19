@@ -77,22 +77,62 @@ export default function AllArticlesPage() {
       author: "Lisa Park",
       date: "Sep 19, 2025",
       readTime: "5 min read",
-      tags: ["Tools", "Resuurces", "Productivity"],
+      tags: ["Tools", "Resources", "Productivity"],
       link: "/vscodeextension",
     },
      {
-      title: "VS Code Extensions That Will Save You Hours",
+      title: "Angular: The Swiss Army Knife Framework That Actually Cuts Through Enterprise Complexity",
       excerpt: "From GitLens to TabNine, these extensions streamline your workflow, reduce context switching, and help you write cleaner code — faster.",
-      category: "Tools",
+      category: "Frameworks",
       author: "Lisa Park",
       date: "Sep 19, 2025",
       readTime: "5 min read",
-      tags: ["Tools", "Resuurces", "Productivity"],
-      link: "/vscodeextension",
+      tags: ["Learning", "Resources", "Productivity"],
+      link: "/angularexplore",
     },
+     {
+      title: "Nuxt.js: When Vue.js Hits the Gym and Gets Swole",
+      excerpt: "Nuxt is to Vue what Next is to React. It adds server-side rendering, static site generation, and a modular architecture that makes building Vue applications a breeze.",
+      category: "Frameworks",
+      author: "Lisa Park",
+      date: "Sep 19, 2025",
+      readTime: "5 min read",
+      tags: ["Learning", "Career", "Productivity"],
+      link: "/nuxtjsexplore",
+    },
+     {
+      title: "React's Virtual DOM: The Performance Hack That Changed Everything",
+      excerpt: "React revolutionized how we think about UI components. With its virtual DOM and massive ecosystem, it's the go-to choice for everything from startups to Fortune 500 companies.",
+      category: "Frameworks",
+      author: "Lisa Park",
+      date: "Aug 19, 2025",
+      readTime: "5 min read",
+      tags: ["Learning", "Career", "Productivity"],
+      link: "/reactexplore",
+    },
+    {
+      title: "Build Time vs Runtime: How Svelte Won the Performance War Before It Started",
+      excerpt: "Svelte flips the script entirely. Instead of doing the work in the browser, it compiles your components at build time. The result? Blazing fast apps.",
+      category: "Frameworks",
+      author: "Lisa Park",
+      date: "Aug 19, 2025",
+      readTime: "5 min read",
+      tags: ["Learning", "Career", "Productivity"],
+      link: "/svelteexplore",
+    },
+    {
+      title: "The Goldilocks Framework: Why Vue.js is 'Just Right' for Most Developers",
+      excerpt: "Vue strikes the perfect balance between simplicity and power. Its gentle learning curve and excellent documentation make it a favorite among developers.",
+      category: "Frameworks",
+      author: "Lisa Park",
+      date: "Aug 19, 2025",
+      readTime: "5 min read",
+      tags: ["Learning", "Career", "Productivity"],
+      link: "/vueexplore",
+    }
   ]
 
-  const categories = ["All", "Frameworks", "Debug Skills", "Backend", "Frontend", "Beginner", "Tools"]
+  const categories = ["All", "Frameworks", "Debugging Skills", "Beginner", "Tools"]
 
   const filteredArticles = articles.filter((article) => {
     const matchesSearch =

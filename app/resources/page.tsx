@@ -315,7 +315,7 @@ export default function ResourcesPage() {
           >
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%201000%201000%22%3E%3Cpolygon%20fill=%22rgba(255,255,255,0.1)%22%20points=%220,1000%201000,800%201000,1000%22/%3E%3C/svg%3E')] bg-cover"></div>
 
-            <div className="relative z-10">
+            {/* <div className="relative z-10">
               <h2 className="text-4xl font-bold mb-4">Stay Updated</h2>
               <p className="text-xl mb-8 opacity-90">
                 Get notified when we add new resources and tools to our collection.
@@ -331,7 +331,7 @@ export default function ResourcesPage() {
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>

@@ -51,9 +51,10 @@ export default function FrameworksPage() {
                 >
                   Explore React
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                 <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -91,9 +92,10 @@ export default function FrameworksPage() {
                 >
                   Explore Vue
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                 <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -127,9 +129,10 @@ export default function FrameworksPage() {
                   href="/articles/angularexplore" className="flex-1 bg-red-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-red-700 transition-colors">
                   Explore Angular
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                 <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -167,9 +170,10 @@ export default function FrameworksPage() {
                 >
                   Explore Svelte
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                 <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -203,9 +207,10 @@ export default function FrameworksPage() {
                   href="/articles/nextjsexplore" className="flex-1 bg-slate-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-slate-900 transition-colors">
                   Explore Next.js
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                 <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -241,9 +246,10 @@ export default function FrameworksPage() {
                   href="/articles/nuxtjsexplore" className="flex-1 bg-emerald-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
                   Explore Nuxt.js
                 </Link>
-                <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
+                <Link 
+                 href="/articles/frameworkguide" className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -306,7 +312,7 @@ export default function FrameworksPage() {
             projects.
           </p>
           <Link
-            href="/getting-started"
+            href="/frameworkguide"
             className="inline-block bg-white text-slate-800 py-4 px-8 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
           >
             Get the Framework Guide
