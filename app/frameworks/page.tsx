@@ -46,7 +46,7 @@ export default function FrameworksPage() {
               </div>
               <div className="flex gap-3">
                 <Link
-                  href="/articles/react-vs-vue"
+                  href="/articles/reactexplore"
                   className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg font-medium text-center hover:bg-blue-700 transition-colors"
                 >
                   Explore React
@@ -86,7 +86,7 @@ export default function FrameworksPage() {
               </div>
               <div className="flex gap-3">
                 <Link
-                  href="/articles/react-vs-vue"
+                  href="/articles/vueexplore"
                   className="flex-1 bg-green-600 text-white py-3 px-4 rounded-lg font-medium text-center hover:bg-green-700 transition-colors"
                 >
                   Explore Vue
@@ -123,9 +123,10 @@ export default function FrameworksPage() {
                 </span>
               </div>
               <div className="flex gap-3">
-                <button className="flex-1 bg-red-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-red-700 transition-colors">
+                <Link
+                  href="/articles/angularexplore" className="flex-1 bg-red-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-red-700 transition-colors">
                   Explore Angular
-                </button>
+                </Link>
                 <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
                 </button>
@@ -161,7 +162,7 @@ export default function FrameworksPage() {
               </div>
               <div className="flex gap-3">
                 <Link
-                  href="/articles/svelte-2025"
+                  href="/articles/svelteexplore"
                   className="flex-1 bg-orange-600 text-white py-3 px-4 rounded-lg font-medium text-center hover:bg-orange-700 transition-colors"
                 >
                   Explore Svelte
@@ -198,9 +199,10 @@ export default function FrameworksPage() {
                 </span>
               </div>
               <div className="flex gap-3">
-                <button className="flex-1 bg-slate-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-slate-900 transition-colors">
+                <Link
+                  href="/articles/nextjsexplore" className="flex-1 bg-slate-800 text-white py-3 px-4 rounded-lg font-medium hover:bg-slate-900 transition-colors">
                   Explore Next.js
-                </button>
+                </Link>
                 <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
                 </button>
@@ -235,9 +237,10 @@ export default function FrameworksPage() {
                 </span>
               </div>
               <div className="flex gap-3">
-                <button className="flex-1 bg-emerald-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
+                <Link
+                  href="/articles/nuxtjsexplore" className="flex-1 bg-emerald-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
                   Explore Nuxt.js
-                </button>
+                </Link>
                 <button className="flex-1 bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium hover:bg-slate-200 transition-colors">
                   Compare
                 </button>
