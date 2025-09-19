@@ -214,44 +214,7 @@ export default function NuxtjsExplorePage() {
           />
         ))}
       </div>
-
-      {/* Header */}
-      <header className="relative z-30 flex items-center justify-between px-6 py-4 bg-black/20 backdrop-blur-lg border-b border-white/10">
-        <motion.a
-          href="index.html"
-          className="text-2xl font-bold text-white hover:text-emerald-400 transition-colors"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Tell Me More <span className="text-emerald-400">Tech</span>
-        </motion.a>
-        
-        <motion.nav
-          className="hidden md:block"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <ul className="flex items-center gap-8">
-            <li><a href="frameworks.html" className="text-white/80 hover:text-white transition-colors">Frameworks</a></li>
-            <li><a href="dev_tools.html" className="text-white/80 hover:text-white transition-colors">Dev Tools</a></li>
-            <li><a href="resources_page.html" className="text-white/80 hover:text-white transition-colors">Resources</a></li>
-            <li><a href="all_articles.html" className="text-white/80 hover:text-white transition-colors">All Articles</a></li>
-          </ul>
-        </motion.nav>
-        
-        <motion.a
-          href="dev_tips.html"
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Free Dev Tips
-        </motion.a>
-      </header>
-
+      
       {/* Hero Section */}
       <section className="relative z-20 flex items-center justify-center min-h-screen px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
